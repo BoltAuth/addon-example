@@ -8,7 +8,7 @@
     "require": {
         "php": ">=5.5.9",
         "bolt/bolt": "^3.0",
-        "bolt/members": "^3.0",
+        "bolt/members": "^3.0"
     },
     "license": "MIT",
     "authors": [
@@ -20,7 +20,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Bolt\\Extension\\Europeana\\MembersAddons\\": "src",
+            "Bolt\\Extension\\Europeana\\MembersAddons\\": "src"
         }
     },
     "autoload-dev": {
@@ -30,7 +30,7 @@
     },
     "extra": {
         "bolt-assets": "web",
-        "bolt-class": "Bolt\\Extension\\Europeana\\Members\\MembersAddonsExtension",
+        "bolt-class": "Bolt\\Extension\\Europeana\\MembersAddon\\MembersAddonsExtension",
         "branch-alias": {
             "dev-master": "3.0.x-dev"
         }
