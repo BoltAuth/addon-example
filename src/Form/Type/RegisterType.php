@@ -1,6 +1,6 @@
 <?php
 
-namespace Bolt\Extension\Europeana\MembersAddon\Form\Type;
+namespace Bolt\Extension\Europeana\MembersAddons\Form\Type;
 
 use Bolt\Extension\Bolt\Members\Form\Validator\Constraint\UniqueEmail;
 use Bolt\Extension\Bolt\Members\Storage\Records;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Bolt\Extension\Europeana\MembersAddon;
+namespace Bolt\Extension\Europeana\MembersAddons;
 
-use Bolt\Extension\Europeana\MembersAddons\Provider\MembersAddonServiceProvider;
+use Bolt\Extension\Europeana\MembersAddons\Provider\MembersAddonsServiceProvider;
 use Bolt\Extension\SimpleExtension;
 use Silex\Application;
 
@@ -20,7 +20,7 @@ class MembersAddonsExtension extends SimpleExtension
     {
         return [
             $this,
-            new MembersAddonServiceProvider(),
+            new MembersAddonsServiceProvider(),
         ];
     }
 }

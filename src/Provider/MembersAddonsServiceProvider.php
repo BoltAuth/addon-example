@@ -3,7 +3,7 @@
 namespace Bolt\Extension\Europeana\MembersAddons\Provider;
 
 use Bolt\Extension\Bolt\Members\Form\Validator\Constraint\UniqueEmail;
-use Bolt\Extension\Europeana\MembersAddon\Form;
+use Bolt\Extension\Europeana\MembersAddons\Form;
 use Silex\Application;
 use Silex\ServiceProviderInterface;
 
@@ -12,7 +12,7 @@ use Silex\ServiceProviderInterface;
  *
  * @author Gawain Lynch <gawain.lynch@gmail.com>
  */
-class MembersAddonServiceProvider implements ServiceProviderInterface
+class MembersAddonsServiceProvider implements ServiceProviderInterface
 {
     /**
      * @inheritDoc

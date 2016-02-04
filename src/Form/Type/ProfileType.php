@@ -1,6 +1,6 @@
 <?php
 
-namespace Bolt\Extension\Europeana\MembersAddon\Form\Type;
+namespace Bolt\Extension\Europeana\MembersAddons\Form\Type;
 
 use Bolt\Translation\Translator as Trans;
 use Symfony\Component\Form\AbstractType;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bolt\Extension\Europeana\MembersAddon\Form\Entity;
+namespace Bolt\Extension\Europeana\MembersAddons\Form\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
