@@ -19,6 +19,15 @@ class MembersAddonsServiceProvider implements ServiceProviderInterface
      */
     public function register(Application $app)
     {
+    }
+
+    /**
+     * Override the Members form objects at the start of the request cycle.
+     *
+     * @param Application $app
+     */
+    public function onRequest(Application $app)
+    {
         $app['members.forms'] = $app->share(
             function ($app) {
                 $type = new \Pimple(
@@ -61,5 +70,6 @@ class MembersAddonsServiceProvider implements ServiceProviderInterface
      */
     public function boot(Application $app)
     {
+        $this->onRequest($app);
     }
 }
