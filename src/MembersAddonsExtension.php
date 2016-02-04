@@ -2,6 +2,7 @@
 
 namespace Bolt\Extension\Europeana\MembersAddon;
 
+use Bolt\Extension\Europeana\MembersAddons\Provider\MembersAddonServiceProvider;
 use Bolt\Extension\SimpleExtension;
 use Silex\Application;
 
@@ -17,6 +18,9 @@ class MembersAddonsExtension extends SimpleExtension
      */
     public function getServiceProviders()
     {
-        return [$this];
+        return [
+            $this,
+            new MembersAddonServiceProvider(),
+        ];
     }
 }
