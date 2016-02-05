@@ -1,0 +1,58 @@
+{#
+ # Passed in variables:
+ #
+ #}
+{% extends twigparent %}
+
+{% block members %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <div class="row">
+        <h4>Edit Profile</h4>
+    </div>
+
+    <div class="row profile">
+
+        <div class="small-12 columns">
+
+            {{ form_start(form) }}
+            {{ form_row(form.displayname) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.plainPassword.first) }}
+            {{ form_row(form.plainPassword.second) }}
+
+            {{ form_row(form.website) }}
+            {{ form_row(form.twitter_handle) }}
+            {{ form_row(form.biography) }}
+            {{ form_row(form.address_street) }}
+            {{ form_row(form.address_street_meta) }}
+            {{ form_row(form.address_city) }}
+            {{ form_row(form.address_state) }}
+            {{ form_row(form.address_country) }}
+            {{ form_row(form.phone_number) }}
+
+            <br>
+            {{ form_row(form.submit) }}
+            {{ form_end(form) }}
+
+        </div>
+
+        <div class="small-12 columns">
+            <h5>Registered Social Media Accounts</h5>
+
+            <ul>
+                {%- for provider in member_providers() %}
+                    <li><i class="fa fa-{{ provider }}">  {{ provider|title }}</i></li>
+                {% endfor -%}
+            </ul>
+        </div>
+
+        <div class="small-12 columns">
+            <h5>Add Social Media Account</h5>
+
+            {{ members_auth_login() }}
+        </div>
+
+    </div>
+
+    {% include 'feedback.twig' %}
+{% endblock %}
