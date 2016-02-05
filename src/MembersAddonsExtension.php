@@ -23,4 +23,14 @@ class MembersAddonsExtension extends SimpleExtension
             new MembersAddonsServiceProvider(),
         ];
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function registerTwigPaths()
+    {
+        return [
+            'templates/profile' => ['position' => 'prepend']
+        ];
+    }
 }
