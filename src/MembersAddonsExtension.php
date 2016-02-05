@@ -33,4 +33,26 @@ class MembersAddonsExtension extends SimpleExtension
             'templates/profile' => ['position' => 'prepend']
         ];
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getDefaultConfig()
+    {
+        return [
+            'meta_fields' => [
+                'profile' => [
+                    'website',
+                    'twitter_handle',
+                    'biography',
+                    'address_street',
+                    'address_street_meta',
+                    'address_city',
+                    'address_state',
+                    'address_country',
+                    'phone_number',
+                ],
+            ],
+        ];
+    }
 }
