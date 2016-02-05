@@ -20,7 +20,7 @@ class MembersAddonsExtension extends SimpleExtension
     {
         return [
             $this,
-            new MembersAddonsServiceProvider(),
+            new MembersAddonsServiceProvider($this->getConfig()),
         ];
     }
 

@@ -14,11 +14,29 @@ use Silex\ServiceProviderInterface;
  */
 class MembersAddonsServiceProvider implements ServiceProviderInterface
 {
+    /** @var array */
+    private $config;
+
+    /**
+     * Constructor.
+     *
+     * @param array $config
+     */
+    public function __construct(array $config)
+    {
+        $this->config = $config;
+    }
+
     /**
      * @inheritDoc
      */
     public function register(Application $app)
     {
+        $app['members.meta_fields'] = $app->share(
+            function () {
+                return $this->config['meta_fields'];
+            }
+        );
     }
 
     /**
