@@ -1,30 +1,39 @@
 {% block profile_meta %}
 
     {{ form_label(form.website, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_errors(form.website) }}
     {{ form_widget(form.website, {'attr': {'class': 'form-control large'} }) }}
 
     {{ form_label(form.twitter_handle, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_errors(form.twitter_handle) }}
     {{ form_widget(form.twitter_handle, {'attr': {'class': 'form-control large'} }) }}
 
     {{ form_label(form.biography, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_errors(form.biography) }}
     {{ form_widget(form.biography, {'attr': {'class': 'form-control large'} }) }}
 
     {{ form_label(form.address_street, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_errors(form.address_street) }}
     {{ form_widget(form.address_street, {'attr': {'class': 'form-control large'} }) }}
 
     {{ form_label(form.address_street_meta, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_errors(form.address_street_meta) }}
     {{ form_widget(form.address_street_meta, {'attr': {'class': 'form-control large'} }) }}
 
     {{ form_label(form.address_city, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_errors(form.address_city) }}
     {{ form_widget(form.address_city, {'attr': {'class': 'form-control large'} }) }}
 
     {{ form_label(form.address_state, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_errors(form.address_state) }}
     {{ form_widget(form.address_state, {'attr': {'class': 'form-control large'} }) }}
 
     {{ form_label(form.address_country, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_errors(form.address_country) }}
     {{ form_widget(form.address_country, {'attr': {'class': 'form-control large'} }) }}
 
     {{ form_label(form.phone_number, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_errors(form.phone_number) }}
     {{ form_widget(form.phone_number, {'attr': {'class': 'form-control large'} }) }}
 
 
