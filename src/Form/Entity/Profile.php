@@ -2,8 +2,7 @@
 
 namespace Bolt\Extension\Europeana\MembersAddons\Form\Entity;
 
-use Bolt\Extension\Bolt\Members\Storage\Entity\AccountMeta;
-use Bolt\Extension\Bolt\Members\Storage\Records;
+use Bolt\Extension\Bolt\Members\Form\Entity\Profile as BaseProfile;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -11,16 +10,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @author Gawain Lynch <gawain.lynch@gmail.com>
  */
-class Profile
+class Profile extends BaseProfile
 {
-    /** @var string */
-    protected $guid;
-    /** @var string */
-    protected $email;
-    /** @var string */
-    protected $displayName;
-
-
     /** @var string */
     protected $twitterHandle;
     /** @var string */
@@ -39,96 +30,6 @@ class Profile
     protected $addressCountry;
     /** @var string */
     protected $phoneNumber;
-
-    /** @var array */
-    protected $meta;
-    /** @var  Records */
-    private $records;
-
-    /**
-     * Constructor.
-     *
-     * @param Records $records
-     */
-    public function __construct(Records $records)
-    {
-        $this->records = $records;
-    }
-
-    /**
-     * @return string
-     */
-    public function getGuid()
-    {
-        return $this->guid;
-    }
-
-    /**
-     * @param string $guid
-     *
-     * @return Profile
-     */
-    public function setGuid($guid)
-    {
-        $this->guid = $guid;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param string $email
-     *
-     * @return Profile
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDisplayName()
-    {
-        return $this->displayName;
-    }
-
-    /**
-     * @param string $displayName
-     *
-     * @return Profile
-     */
-    public function setDisplayName($displayName)
-    {
-        $this->displayName = $displayName;
-
-        return $this;
-    }
-
-
-    /**
-     * @param bool $cache
-     *
-     * @return AccountMeta[]
-     */
-    public function getMeta($cache = true)
-    {
-        if ($cache && $this->meta !== null) {
-            return $this->meta;
-        }
-
-        return $this->meta = $this->records->getAccountMetaAll($this->guid);
-    }
 
     /**
      * @return string

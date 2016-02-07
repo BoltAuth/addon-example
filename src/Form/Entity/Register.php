@@ -2,6 +2,7 @@
 
 namespace Bolt\Extension\Europeana\MembersAddons\Form\Entity;
 
+use Bolt\Extension\Bolt\Members\Form\Entity\Register as BaseRegister;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -9,50 +10,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @author Gawain Lynch <gawain.lynch@gmail.com>
  */
-class Register
+class Register extends BaseRegister
 {
-    /** string */
-    protected $email;
-    /** string */
-    protected $displayName;
-
-    /**
-     * @return mixed
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param mixed $email
-     *
-     * @return Register
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDisplayName()
-    {
-        return $this->displayName;
-    }
-
-    /**
-     * @param mixed $displayName
-     *
-     * @return Register
-     */
-    public function setDisplayName($displayName)
-    {
-        $this->displayName = $displayName;
-
-        return $this;
-    }
 }

@@ -2,6 +2,7 @@
 
 namespace Bolt\Extension\Europeana\MembersAddons\Form\Entity;
 
+use Bolt\Extension\Bolt\Members\Form\Entity\Login as BaseLogin;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -9,50 +10,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @author Gawain Lynch <gawain.lynch@gmail.com>
  */
-class Login
+class Login extends BaseLogin
 {
-    /** string */
-    protected $email;
-    /** string */
-    protected $password;
-
-    /**
-     * @return mixed
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param mixed $email
-     *
-     * @return Register
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * @param mixed $password
-     *
-     * @return Register
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
 }
