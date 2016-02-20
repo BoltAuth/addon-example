@@ -14,25 +14,25 @@
 
         <div class="small-12 columns">
 
-            {{ form_start(form) }}
-            {{ form_row(form.displayname) }}
-            {{ form_row(form.email) }}
-            {{ form_row(form.plainPassword.first) }}
-            {{ form_row(form.plainPassword.second) }}
+            {{ form_start(profile_form) }}
+            {{ form_row(profile_form.displayname) }}
+            {{ form_row(profile_form.email) }}
+            {{ form_row(profile_form.plainPassword.first) }}
+            {{ form_row(profile_form.plainPassword.second) }}
 
-            {{ form_row(form.website) }}
-            {{ form_row(form.twitter_handle) }}
-            {{ form_row(form.biography) }}
-            {{ form_row(form.address_street) }}
-            {{ form_row(form.address_street_meta) }}
-            {{ form_row(form.address_city) }}
-            {{ form_row(form.address_state) }}
-            {{ form_row(form.address_country) }}
-            {{ form_row(form.phone_number) }}
+            {{ form_row(profile_form.website) }}
+            {{ form_row(profile_form.twitter_handle) }}
+            {{ form_row(profile_form.biography) }}
+            {{ form_row(profile_form.address_street) }}
+            {{ form_row(profile_form.address_street_meta) }}
+            {{ form_row(profile_form.address_city) }}
+            {{ form_row(profile_form.address_state) }}
+            {{ form_row(profile_form.address_country) }}
+            {{ form_row(profile_form.phone_number) }}
 
             <br>
-            {{ form_row(form.submit) }}
-            {{ form_end(form) }}
+            {{ form_row(profile_form.submit) }}
+            {{ form_end(profile_form) }}
 
         </div>
 
