@@ -33,8 +33,8 @@ class MembersAddonsExtension extends SimpleExtension
     protected function registerTwigPaths()
     {
         return [
-            'templates/admin' => ['position' => 'prepend'],
-            'templates/profile' => ['position' => 'prepend', 'namespace' => 'MembersAdmin'],
+            'templates/admin' => ['position' => 'prepend', 'namespace' => 'MembersAdmin'],
+            'templates/profile' => ['position' => 'prepend'],
         ];
     }
 
