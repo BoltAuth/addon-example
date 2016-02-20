@@ -33,8 +33,8 @@ class MembersAddonsServiceProvider implements ServiceProviderInterface
     public function register(Application $app)
     {
         $app['members.meta_fields'] = $app->share(
-            function () {
-                return $this->config['meta_fields'];
+            function ($app) {
+                return $app['members.meta_fields'] + $this->config['meta_fields'];
             }
         );
     }
@@ -51,20 +51,22 @@ class MembersAddonsServiceProvider implements ServiceProviderInterface
                 $type = new \Pimple(
                     [
                         // @codingStandardsIgnoreStart
-                        'login'    => $app->share(function () use ($app) { return new Form\Type\LoginType($app['members.config']); }),
-                        'logout'   => $app->share(function () use ($app) { return new Form\Type\LogoutType($app['members.config']); }),
-                        'profile'  => $app->share(function () use ($app) { return new Form\Type\ProfileType($app['members.config']); }),
-                        'register' => $app->share(function () use ($app) { return new Form\Type\RegisterType($app['members.config'], $app['members.records']); }),
+                        'associate' => $app->share(function () use ($app) { return new Form\Type\AssociateType($app['members.config']); }),
+                        'login'     => $app->share(function () use ($app) { return new Form\Type\LoginType($app['members.config']); }),
+                        'logout'    => $app->share(function () use ($app) { return new Form\Type\LogoutType($app['members.config']); }),
+                        'profile'   => $app->share(function () use ($app) { return new Form\Type\ProfileType($app['members.config']); }),
+                        'register'  => $app->share(function () use ($app) { return new Form\Type\RegisterType($app['members.config'], $app['members.records']); }),
                         // @codingStandardsIgnoreEnd
                     ]
                 );
                 $entity = new \Pimple(
                     [
                         // @codingStandardsIgnoreStart
-                        'login'    => $app->share(function () use ($app) { return new Form\Entity\Login(); }),
-                        'logout'   => $app->share(function () use ($app) { return new Form\Entity\Logout(); }),
-                        'profile'  => $app->share(function () use ($app) { return new Form\Entity\Profile($app['members.records']); }),
-                        'register' => $app->share(function () use ($app) { return new Form\Entity\Register(); }),
+                        'associate' => $app->share(function () use ($app) { return new Form\Entity\Associate(); }),
+                        'login'     => $app->share(function () use ($app) { return new Form\Entity\Login(); }),
+                        'logout'    => $app->share(function () use ($app) { return new Form\Entity\Logout(); }),
+                        'profile'   => $app->share(function () use ($app) { return new Form\Entity\Profile($app['members.records']); }),
+                        'register'  => $app->share(function () use ($app) { return new Form\Entity\Register(); }),
                         // @codingStandardsIgnoreEnd
                     ]
                 );

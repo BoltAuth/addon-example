@@ -2,18 +2,16 @@
 
 namespace Bolt\Extension\Europeana\MembersAddons\Form\Type;
 
-use Bolt\Extension\Bolt\Members\Form\Type\LoginType as MembersLoginType;
+use Bolt\Extension\Bolt\Members\Form\Type\AssociateType as MembersAssociateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Login type
+ * Associate social media type.
  *
- * Copyright (C) 2014-2016 Gawain Lynch
- *
- * @author Gawain Lynch <gawain.lynch@gmail.com>
+ * @author    Gawain Lynch <gawain.lynch@gmail.com>
  */
-class LoginType extends MembersLoginType
+class AssociateType extends MembersAssociateType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
