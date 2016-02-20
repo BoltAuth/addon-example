@@ -46,7 +46,7 @@ class MembersAddonsServiceProvider implements ServiceProviderInterface
      */
     public function onRequest(Application $app)
     {
-        $app['members.forms'] = $app->share(
+        $app['members.form.components'] = $app->share(
             function ($app) {
                 $type = new \Pimple(
                     [
