@@ -2,7 +2,7 @@
 
 namespace Bolt\Extension\Europeana\MembersAddons\Form\Entity;
 
-use Bolt\Extension\Bolt\Members\Form\Entity\Profile as BaseProfile;
+use Bolt\Extension\Bolt\Members\Form\Entity\Profile as MembersProfile;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @author Gawain Lynch <gawain.lynch@gmail.com>
  */
-class Profile extends BaseProfile
+class Profile extends MembersProfile
 {
     /** @var string */
     protected $twitterHandle;

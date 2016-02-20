@@ -2,8 +2,8 @@
 
 namespace Bolt\Extension\Europeana\MembersAddons\Form\Type;
 
+use Bolt\Extension\Bolt\Members\Form\Type\ProfileType as MembersProfileType;
 use Bolt\Translation\Translator as Trans;
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -13,40 +13,16 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @author Gawain Lynch <gawain.lynch@gmail.com>
  */
-class ProfileType extends AbstractType
+class ProfileType extends MembersProfileType
 {
-    /** @var boolean */
-    protected $requirePassword = true;
-
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        parent::buildForm($builder, $options);
+
         $builder
-            ->add('displayname', Type\TextType::class,   [
-                'label'       => Trans::__('Public name:'),
-                'data'        => $this->getData($options, 'displayname'),
-                'constraints' => [
-                    new Assert\NotBlank(),
-                    new Assert\Length(['min' => 2]),
-                ],
-            ])
-            ->add('email',       Type\EmailType::class,   [
-                'label'       => Trans::__('Email:'),
-                'data'        => $this->getData($options, 'email'),
-                'constraints' => new Assert\Email([
-                    'message' => 'The address "{{ value }}" is not a valid email.',
-                    'checkMX' => true,
-                ]),
-            ])
-            ->add('plainPassword', Type\RepeatedType::class, [
-                'type' => Type\PasswordType::class,
-                'first_options'  => array('label' => 'Password'),
-                'second_options' => array('label' => 'Repeat Password'),
-                'empty_data'     => null,
-                'required'       => $this->requirePassword,
-            ])
             ->add('website', Type\TextType::class,   [
                 'label'       => Trans::__('Website URL:'),
                 'data'        => $this->getData($options, 'website'),
@@ -104,40 +80,5 @@ class ProfileType extends AbstractType
             ->add('submit',      'submit', [
                 'label'   => Trans::__('Save & continue'),
             ]);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getName()
-    {
-        return 'profile';
-    }
-
-    /**
-     * @param array  $options
-     * @param string $field
-     *
-     * @return mixed|null
-     */
-    private function getData(array $options, $field)
-    {
-        if (!isset($options['data'])) {
-            return null;
-        }
-
-        return isset($options['data'][$field]) ? $options['data'][$field] : null;
-    }
-
-    /**
-     * @param boolean $requirePassword
-     *
-     * @return ProfileType
-     */
-    public function setRequirePassword($requirePassword)
-    {
-        $this->requirePassword = $requirePassword;
-
-        return $this;
     }
 }

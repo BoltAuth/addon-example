@@ -2,7 +2,7 @@
 
 namespace Bolt\Extension\Europeana\MembersAddons\Form\Entity;
 
-use Bolt\Extension\Bolt\Members\Form\Entity\Register as BaseRegister;
+use Bolt\Extension\Bolt\Members\Form\Entity\Register as MembersRegister;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -10,6 +10,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @author Gawain Lynch <gawain.lynch@gmail.com>
  */
-class Register extends BaseRegister
+class Register extends MembersRegister
 {
 }

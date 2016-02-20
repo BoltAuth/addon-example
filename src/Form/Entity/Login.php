@@ -2,7 +2,7 @@
 
 namespace Bolt\Extension\Europeana\MembersAddons\Form\Entity;
 
-use Bolt\Extension\Bolt\Members\Form\Entity\Login as BaseLogin;
+use Bolt\Extension\Bolt\Members\Form\Entity\Login as MembersLogin;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -10,6 +10,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @author Gawain Lynch <gawain.lynch@gmail.com>
  */
-class Login extends BaseLogin
+class Login extends MembersLogin
 {
 }
