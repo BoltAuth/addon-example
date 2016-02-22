@@ -14,25 +14,25 @@
 
         <div class="small-12 columns">
 
-            {{ form_start(profile_form) }}
-            {{ form_row(profile_form.displayname) }}
-            {{ form_row(profile_form.email) }}
-            {{ form_row(profile_form.plainPassword.first) }}
-            {{ form_row(profile_form.plainPassword.second) }}
+            {{ form_start(form_profile) }}
+            {{ form_row(form_profile.displayname) }}
+            {{ form_row(form_profile.email) }}
+            {{ form_row(form_profile.plainPassword.first) }}
+            {{ form_row(form_profile.plainPassword.second) }}
 
-            {{ form_row(profile_form.website) }}
-            {{ form_row(profile_form.twitter_handle) }}
-            {{ form_row(profile_form.biography) }}
-            {{ form_row(profile_form.address_street) }}
-            {{ form_row(profile_form.address_street_meta) }}
-            {{ form_row(profile_form.address_city) }}
-            {{ form_row(profile_form.address_state) }}
-            {{ form_row(profile_form.address_country) }}
-            {{ form_row(profile_form.phone_number) }}
+            {{ form_row(form_profile.website) }}
+            {{ form_row(form_profile.twitter_handle) }}
+            {{ form_row(form_profile.biography) }}
+            {{ form_row(form_profile.address_street) }}
+            {{ form_row(form_profile.address_street_meta) }}
+            {{ form_row(form_profile.address_city) }}
+            {{ form_row(form_profile.address_state) }}
+            {{ form_row(form_profile.address_country) }}
+            {{ form_row(form_profile.phone_number) }}
 
             <br>
-            {{ form_row(profile_form.submit) }}
-            {{ form_end(profile_form) }}
+            {{ form_row(form_profile.submit) }}
+            {{ form_end(form_profile) }}
 
         </div>
 
@@ -49,7 +49,7 @@
         <div class="small-12 columns">
             <h5>Add Social Media Account</h5>
 
-            {{ members_auth_login() }}
+            {{ members_auth_associate() }}
         </div>
 
     </div>
