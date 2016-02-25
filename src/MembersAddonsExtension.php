@@ -43,7 +43,7 @@ class MembersAddonsExtension extends SimpleExtension
      */
     protected function subscribe(EventDispatcherInterface $dispatcher)
     {
-        $dispatcher->addListener(MembersEvents::MEMBER_PROFILE_SAVE, [$this, 'onProfileSave']);
+        $dispatcher->addListener(MembersEvents::MEMBER_PROFILE_PRE_SAVE, [$this, 'onProfileSave']);
     }
 
     /**
