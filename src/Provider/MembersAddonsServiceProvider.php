@@ -2,7 +2,6 @@
 
 namespace Bolt\Extension\Europeana\MembersAddons\Provider;
 
-use Bolt\Extension\Bolt\Members\Form\Validator\Constraint\UniqueEmail;
 use Bolt\Extension\Europeana\MembersAddons\Form;
 use Silex\Application;
 use Silex\ServiceProviderInterface;
@@ -51,12 +50,12 @@ class MembersAddonsServiceProvider implements ServiceProviderInterface
             function ($components, $app) {
                 $components['type']['profile'] = $app->share(
                     function () use ($app) {
-                        return new Form\Type\ProfileType($app['members.config']);
+                        return new Form\Type\ProfileEditType($app['members.config']);
                     }
                 );
                 $components['entity']['profile'] = $app->share(
                     function () use ($app) {
-                        return new Form\Entity\Profile($app['members.records']);
+                        return new Form\Entity\ProfileEdit($app['members.records']);
                     }
                 );
 

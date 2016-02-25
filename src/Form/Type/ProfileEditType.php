@@ -2,7 +2,7 @@
 
 namespace Bolt\Extension\Europeana\MembersAddons\Form\Type;
 
-use Bolt\Extension\Bolt\Members\Form\Type\ProfileType as MembersProfileType;
+use Bolt\Extension\Bolt\Members\Form\Type\ProfileEditType as MembersProfileEditType;
 use Bolt\Translation\Translator as Trans;
 use Symfony\Component\Form\Extension\Core\Type;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @author Gawain Lynch <gawain.lynch@gmail.com>
  */
-class ProfileType extends MembersProfileType
+class ProfileEditType extends MembersProfileEditType
 {
     /**
      * {@inheritdoc}
