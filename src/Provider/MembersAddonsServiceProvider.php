@@ -48,12 +48,12 @@ class MembersAddonsServiceProvider implements ServiceProviderInterface
         $app['members.form.components'] = $app->extend(
             'members.form.components',
             function ($components, $app) {
-                $components['type']['profile'] = $app->share(
+                $components['type']['profile_edit'] = $app->share(
                     function () use ($app) {
                         return new Form\Type\ProfileEditType($app['members.config']);
                     }
                 );
-                $components['entity']['profile'] = $app->share(
+                $components['entity']['profile_edit'] = $app->share(
                     function () use ($app) {
                         return new Form\Entity\ProfileEdit($app['members.records']);
                     }
