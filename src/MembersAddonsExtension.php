@@ -54,7 +54,7 @@ class MembersAddonsExtension extends SimpleExtension
     public function onProfileSave(MembersProfileEvent $event)
     {
         $config = $this->getConfig();
-        $event->setMetaFields($config['meta_fields']['profile']);
+        $event->addMetaFieldNames($config['meta_fields']['profile']);
     }
 
     /**
