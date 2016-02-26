@@ -17,8 +17,8 @@
             {{ form_start(form_profile) }}
             {{ form_row(form_profile.displayname) }}
             {{ form_row(form_profile.email) }}
-            {{ form_row(form_profile.plainPassword.first, {'required': false}) }}
-            {{ form_row(form_profile.plainPassword.second, {'required': false}) }}
+            {{ form_row(form_profile.password.first, {'required': false}) }}
+            {{ form_row(form_profile.password.second, {'required': false}) }}
 
             {{ form_row(form_profile.website) }}
             {{ form_row(form_profile.twitter_handle) }}
