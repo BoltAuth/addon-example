@@ -53,9 +53,9 @@ class MembersAddonsServiceProvider implements ServiceProviderInterface
                         return new Form\Type\ProfileEditType($app['members.config']);
                     }
                 );
-                $components['entity']['profile_edit'] = $app->share(
+                $components['entity']['profile'] = $app->share(
                     function () use ($app) {
-                        return new Form\Entity\ProfileEdit($app['members.records']);
+                        return new Form\Entity\Profile($app['members.records']);
                     }
                 );
 

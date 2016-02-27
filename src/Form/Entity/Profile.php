@@ -2,7 +2,7 @@
 
 namespace Bolt\Extension\Europeana\MembersAddons\Form\Entity;
 
-use Bolt\Extension\Bolt\Members\Form\Entity\ProfileEdit as MembersProfileEdit;
+use Bolt\Extension\Bolt\Members\Form\Entity\Profile as BaseProfile;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @author Gawain Lynch <gawain.lynch@gmail.com>
  */
-class ProfileEdit extends MembersProfileEdit
+class Profile extends BaseProfile
 {
     /** @var string */
     protected $twitterHandle;
@@ -42,7 +42,7 @@ class ProfileEdit extends MembersProfileEdit
     /**
      * @param string $twitterHandle
      *
-     * @return ProfileEdit
+     * @return Profile
      */
     public function setTwitterHandle($twitterHandle)
     {
@@ -62,7 +62,7 @@ class ProfileEdit extends MembersProfileEdit
     /**
      * @param string $website
      *
-     * @return ProfileEdit
+     * @return Profile
      */
     public function setWebsite($website)
     {
@@ -82,7 +82,7 @@ class ProfileEdit extends MembersProfileEdit
     /**
      * @param string $biography
      *
-     * @return ProfileEdit
+     * @return Profile
      */
     public function setBiography($biography)
     {
@@ -102,7 +102,7 @@ class ProfileEdit extends MembersProfileEdit
     /**
      * @param string $addressStreet
      *
-     * @return ProfileEdit
+     * @return Profile
      */
     public function setAddressStreet($addressStreet)
     {
@@ -122,7 +122,7 @@ class ProfileEdit extends MembersProfileEdit
     /**
      * @param string $addressStreetMeta
      *
-     * @return ProfileEdit
+     * @return Profile
      */
     public function setAddressStreetMeta($addressStreetMeta)
     {
@@ -142,7 +142,7 @@ class ProfileEdit extends MembersProfileEdit
     /**
      * @param string $addressCity
      *
-     * @return ProfileEdit
+     * @return Profile
      */
     public function setAddressCity($addressCity)
     {
@@ -162,7 +162,7 @@ class ProfileEdit extends MembersProfileEdit
     /**
      * @param string $addressState
      *
-     * @return ProfileEdit
+     * @return Profile
      */
     public function setAddressState($addressState)
     {
@@ -182,7 +182,7 @@ class ProfileEdit extends MembersProfileEdit
     /**
      * @param string $addressCountry
      *
-     * @return ProfileEdit
+     * @return Profile
      */
     public function setAddressCountry($addressCountry)
     {
@@ -202,7 +202,7 @@ class ProfileEdit extends MembersProfileEdit
     /**
      * @param string $phoneNumber
      *
-     * @return ProfileEdit
+     * @return Profile
      */
     public function setPhoneNumber($phoneNumber)
     {
