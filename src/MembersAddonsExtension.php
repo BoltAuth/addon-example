@@ -53,7 +53,7 @@ class MembersAddonsExtension extends SimpleExtension
     {
         $config = $this->getConfig();
         $app['members.addons.config'] = $app->share(
-            function () use ($app, $config) {
+            function () use ($config) {
                 return new Config($config);
             }
         );

@@ -50,7 +50,10 @@ class MembersAddonsServiceProvider implements ServiceProviderInterface
             function ($components, $app) {
                 $components['type']['profile_edit'] = $app->share(
                     function () use ($app) {
-                        return new Form\Type\ProfileEditType($app['members.config']);
+                        $type = new Form\Type\ProfileEditType($app['members.config']);
+                        $type->setLocalConfig($app['members.addons.config']);
+
+                        return $type;
                     }
                 );
                 $components['entity']['profile'] = $app->share(
