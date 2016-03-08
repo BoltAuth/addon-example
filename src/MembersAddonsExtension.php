@@ -4,7 +4,6 @@ namespace Bolt\Extension\Europeana\MembersAddons;
 
 use Bolt\Extension\Bolt\Members\Event\MembersEvents;
 use Bolt\Extension\Bolt\Members\Event\MembersProfileEvent;
-use Bolt\Extension\Europeana\MembersAddons\Provider\MembersAddonsServiceProvider;
 use Bolt\Extension\SimpleExtension;
 use Silex\Application;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -16,17 +15,6 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  */
 class MembersAddonsExtension extends SimpleExtension
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function getServiceProviders()
-    {
-        return [
-            $this,
-            new MembersAddonsServiceProvider($this->getConfig()),
-        ];
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -66,6 +54,15 @@ class MembersAddonsExtension extends SimpleExtension
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function boot(Application $app)
+    {
+        parent::boot($app);
+        $this->onRequest($app);
+    }
+
+    /**
      * Tell Members what fields we want to persist.
      *
      * @param MembersProfileEvent $event
@@ -74,6 +71,33 @@ class MembersAddonsExtension extends SimpleExtension
     {
         $config = $this->getConfig();
         $event->addMetaFieldNames(array_keys($config['meta_fields']['profile']));
+    }
+
+    /**
+     * @param Application $app
+     */
+    public function onRequest(Application $app)
+    {
+        $app['members.form.components'] = $app->extend(
+            'members.form.components',
+            function ($components, $app) {
+                $components['type']['profile_edit'] = $app->share(
+                    function () use ($app) {
+                        $type = new Form\Type\ProfileEditType($app['members.config']);
+                        $type->setLocalConfig($app['members.addons.config']);
+
+                        return $type;
+                    }
+                );
+                $components['entity']['profile'] = $app->share(
+                    function () use ($app) {
+                        return new Form\Entity\Profile($app['members.records']);
+                    }
+                );
+
+                return $components;
+            }
+        );
     }
 
     /**
