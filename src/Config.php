@@ -35,15 +35,16 @@ class Config
      */
     public function __construct($config)
     {
-        $this->website = $config['website']['required'];
-        $this->twitterHandle = $config['twitter_handle']['required'];
-        $this->biography = $config['biography']['required'];
-        $this->addressStreet = $config['address_street']['required'];
-        $this->addressStreetMeta = $config['address_street_meta']['required'];
-        $this->addressCity = $config['address_city']['required'];
-        $this->addressState = $config['address_State']['required'];
-        $this->addressCountry = $config['address_country']['required'];
-        $this->phoneNumber = $config['phone_number']['required'];
+        $profileFields = $config['meta_fields']['profile'];
+        $this->websiteRequired = $profileFields['website']['required'];
+        $this->twitterHandleRequired = $profileFields['twitter_handle']['required'];
+        $this->biographyRequired = $profileFields['biography']['required'];
+        $this->addressStreetRequired = $profileFields['address_street']['required'];
+        $this->addressStreetMetaRequired = $profileFields['address_street_meta']['required'];
+        $this->addressCityRequired = $profileFields['address_city']['required'];
+        $this->addressStateRequired = $profileFields['address_state']['required'];
+        $this->addressCountryRequired = $profileFields['address_country']['required'];
+        $this->phoneNumberRequired = $profileFields['phone_number']['required'];
     }
 
     /**
