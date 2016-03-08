@@ -57,6 +57,12 @@ class MembersAddonsExtension extends SimpleExtension
                 return new Config($config);
             }
         );
+
+        $app['members.meta_fields'] = $app->share(
+            function ($app) use ($config) {
+                return $app['members.meta_fields'] + $config['meta_fields'];
+            }
+        );
     }
 
     /**

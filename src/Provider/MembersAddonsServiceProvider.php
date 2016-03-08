@@ -31,11 +31,6 @@ class MembersAddonsServiceProvider implements ServiceProviderInterface
      */
     public function register(Application $app)
     {
-        $app['members.meta_fields'] = $app->share(
-            function ($app) {
-                return $app['members.meta_fields'] + $this->config['meta_fields'];
-            }
-        );
     }
 
     /**
