@@ -1,0 +1,20 @@
+meta_fields:
+    profile:
+        website:
+            required: false
+        twitter_handle:
+            required: false
+        biography:
+            required: false
+        address_street:
+            required: false
+        address_street_meta:
+            required: false
+        address_city:
+            required: false
+        address_state:
+            required: false
+        address_country:
+            required: false
+        phone_number:
+            required: false

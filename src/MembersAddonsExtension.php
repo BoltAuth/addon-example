@@ -33,7 +33,7 @@ class MembersAddonsExtension extends SimpleExtension
     protected function registerTwigPaths()
     {
         return [
-            'templates/admin' => ['position' => 'prepend', 'namespace' => 'MembersAdmin'],
+            'templates/admin'   => ['position' => 'prepend', 'namespace' => 'MembersAdmin'],
             'templates/profile' => ['position' => 'prepend'],
         ];
     }
@@ -47,6 +47,19 @@ class MembersAddonsExtension extends SimpleExtension
     }
 
     /**
+     * {@inheritdoc}
+     */
+    protected function registerServices(Application $app)
+    {
+        $config = $this->getConfig();
+        $app['members.addons.config'] = $app->share(
+            function () use ($app, $config) {
+                return new Config($config);
+            }
+        );
+    }
+
+    /**
      * Tell Members what fields we want to persist.
      *
      * @param MembersProfileEvent $event
@@ -54,7 +67,7 @@ class MembersAddonsExtension extends SimpleExtension
     public function onProfileSave(MembersProfileEvent $event)
     {
         $config = $this->getConfig();
-        $event->addMetaFieldNames($config['meta_fields']['profile']);
+        $event->addMetaFieldNames(array_keys($config['meta_fields']['profile']));
     }
 
     /**
@@ -65,15 +78,33 @@ class MembersAddonsExtension extends SimpleExtension
         return [
             'meta_fields' => [
                 'profile' => [
-                    'website',
-                    'twitter_handle',
-                    'biography',
-                    'address_street',
-                    'address_street_meta',
-                    'address_city',
-                    'address_state',
-                    'address_country',
-                    'phone_number',
+                    'website' => [
+                        'required' => false,
+                    ],
+                    'twitter_handle' => [
+                        'required' => false,
+                    ],
+                    'biography' => [
+                        'required' => false,
+                    ],
+                    'address_street' => [
+                        'required' => false,
+                    ],
+                    'address_street_meta' => [
+                        'required' => false,
+                    ],
+                    'address_city' => [
+                        'required' => false,
+                    ],
+                    'address_state' => [
+                        'required' => false,
+                    ],
+                    'address_country' => [
+                        'required' => false,
+                    ],
+                    'phone_number' => [
+                        'required' => false,
+                    ],
                 ],
             ],
         ];
