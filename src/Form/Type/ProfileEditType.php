@@ -27,6 +27,41 @@ class ProfileEditType extends MembersProfileEditType
         parent::buildForm($builder, $options);
 
         $builder
+            ->add('first_name', Type\TextType::class,   [
+                'label'       => Trans::__('First Name:'),
+                'data'        => $this->getData($options, 'first_name'),
+                'constraints' => [
+                ],
+                'required'    => $this->localConfig->isFirstNameRequired(),
+            ])
+            ->add('last_name', Type\TextType::class,   [
+                'label'       => Trans::__('Last Name:'),
+                'data'        => $this->getData($options, 'last_name'),
+                'constraints' => [
+                ],
+                'required'    => $this->localConfig->isLastNameRequired(),
+            ])
+            ->add('organisation', Type\TextType::class,   [
+                'label'       => Trans::__('Organisation:'),
+                'data'        => $this->getData($options, 'organisation'),
+                'constraints' => [
+                ],
+                'required'    => $this->localConfig->isOrganisationRequired(),
+            ])
+            ->add('organisation_url', Type\TextType::class,   [
+                'label'       => Trans::__('Organisation URL:'),
+                'data'        => $this->getData($options, 'organisation_url'),
+                'constraints' => [
+                ],
+                'required'    => $this->localConfig->isOrganisationUrlRequired(),
+            ])
+            ->add('profession', Type\TextType::class,   [
+                'label'       => Trans::__('Profession:'),
+                'data'        => $this->getData($options, 'profession'),
+                'constraints' => [
+                ],
+                'required'    => $this->localConfig->isProfessionRequired(),
+            ])
             ->add('website', Type\TextType::class,   [
                 'label'       => Trans::__('Website URL:'),
                 'data'        => $this->getData($options, 'website'),

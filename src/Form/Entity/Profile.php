@@ -13,6 +13,16 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Profile extends BaseProfile
 {
     /** @var string */
+    protected $firstName;
+    /** @var string */
+    protected $lastName;
+    /** @var string */
+    protected $organisation;
+    /** @var string */
+    protected $organisationUrl;
+    /** @var string */
+    protected $profession;
+    /** @var string */
     protected $twitterHandle;
     /** @var string */
     protected $website;
@@ -30,6 +40,106 @@ class Profile extends BaseProfile
     protected $addressCountry;
     /** @var string */
     protected $phoneNumber;
+
+    /**
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * @param string $firstName
+     *
+     * @return Profile
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * @param string $lastName
+     *
+     * @return Profile
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getOrganisation()
+    {
+        return $this->organisation;
+    }
+
+    /**
+     * @param string $organisation
+     *
+     * @return Profile
+     */
+    public function setOrganisation($organisation)
+    {
+        $this->organisation = $organisation;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getOrganisationUrl()
+    {
+        return $this->organisationUrl;
+    }
+
+    /**
+     * @param string $organisationUrl
+     *
+     * @return Profile
+     */
+    public function setOrganisationUrl($organisationUrl)
+    {
+        $this->organisationUrl = $organisationUrl;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProfession()
+    {
+        return $this->profession;
+    }
+
+    /**
+     * @param string $profession
+     *
+     * @return Profile
+     */
+    public function setProfession($profession)
+    {
+        $this->profession = $profession;
+
+        return $this;
+    }
 
     /**
      * @return string

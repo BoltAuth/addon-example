@@ -20,6 +20,12 @@
             {{ form_row(form_profile.password.first, {'required': false}) }}
             {{ form_row(form_profile.password.second, {'required': false}) }}
 
+            {{ form_row(form_profile.first_name) }}
+            {{ form_row(form_profile.last_name) }}
+            {{ form_row(form_profile.organisation) }}
+            {{ form_row(form_profile.organisation_url, {'required': false}) }}
+            {{ form_row(form_profile.profession) }}
+
             {{ form_row(form_profile.website) }}
             {{ form_row(form_profile.twitter_handle) }}
             {{ form_row(form_profile.biography) }}

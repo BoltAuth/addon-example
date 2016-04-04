@@ -10,6 +10,16 @@ namespace Bolt\Extension\Europeana\MembersAddons;
 class Config
 {
     /** @var boolean */
+    protected $firstNameRequired;
+    /** @var boolean */
+    protected $lastNameRequired;
+    /** @var boolean */
+    protected $organisationRequired;
+    /** @var boolean */
+    protected $organisationUrlRequired;
+    /** @var boolean */
+    protected $professionRequired;
+    /** @var boolean */
     protected $websiteRequired;
     /** @var boolean */
     protected $twitterHandleRequired;
@@ -36,6 +46,12 @@ class Config
     public function __construct($config)
     {
         $profileFields = $config['meta_fields']['profile'];
+
+        $this->firstNameRequired = $profileFields['first_name']['required'];
+        $this->lastNameRequired = $profileFields['last_name']['required'];
+        $this->organisationRequired = $profileFields['organisation']['required'];
+        $this->organisationUrlRequired = $profileFields['organisation_url']['required'];
+        $this->professionRequired = $profileFields['profession']['required'];
         $this->websiteRequired = $profileFields['website']['required'];
         $this->twitterHandleRequired = $profileFields['twitter_handle']['required'];
         $this->biographyRequired = $profileFields['biography']['required'];
@@ -45,6 +61,46 @@ class Config
         $this->addressStateRequired = $profileFields['address_state']['required'];
         $this->addressCountryRequired = $profileFields['address_country']['required'];
         $this->phoneNumberRequired = $profileFields['phone_number']['required'];
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isFirstNameRequired()
+    {
+        return $this->firstNameRequired;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isLastNameRequired()
+    {
+        return $this->lastNameRequired;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isOrganisationRequired()
+    {
+        return $this->organisationRequired;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isOrganisationUrlRequired()
+    {
+        return $this->organisationUrlRequired;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isProfessionRequired()
+    {
+        return $this->professionRequired;
     }
 
     /**

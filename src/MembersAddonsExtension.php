@@ -108,6 +108,21 @@ class MembersAddonsExtension extends SimpleExtension
         return [
             'meta_fields' => [
                 'profile' => [
+                    'first_name' => [
+                        'required' => true,
+                    ],
+                    'last_name' => [
+                        'required' => true,
+                    ],
+                    'organisation' => [
+                        'required' => true,
+                    ],
+                    'organisation_url' => [
+                        'required' => false,
+                    ],
+                    'profession' => [
+                        'required' => true,
+                    ],
                     'website' => [
                         'required' => false,
                     ],
