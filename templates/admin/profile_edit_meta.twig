@@ -2,58 +2,58 @@
 
     {{ form_label(form_profile.first_name, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
     {{ form_errors(form_profile.first_name) }}
-    {{ form_widget(form_profile.first_name, {'attr': {'class': 'form-control large'} }) }}
+    {{ form_widget(form_profile.first_name, {'attr': {'class': 'form-control large'}, 'required': false }) }}
 
-    {{ form_label(form_profile.last_name, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_label(form_profile.last_name, null, {'label_attr': {'class': 'main col-xs-12'} }) }}
     {{ form_errors(form_profile.last_name) }}
-    {{ form_widget(form_profile.last_name, {'attr': {'class': 'form-control large'} }) }}
+    {{ form_widget(form_profile.last_name, {'attr': {'class': 'form-control large'}, 'required': false }) }}
 
-    {{ form_label(form_profile.organisation, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_label(form_profile.organisation, null, {'label_attr': {'class': 'main col-xs-12'} }) }}
     {{ form_errors(form_profile.organisation) }}
-    {{ form_widget(form_profile.organisation, {'attr': {'class': 'form-control large'} }) }}
+    {{ form_widget(form_profile.organisation, {'attr': {'class': 'form-control large'}, 'required': false }) }}
 
-    {{ form_label(form_profile.organisation_url, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_label(form_profile.organisation_url, null, {'label_attr': {'class': 'main col-xs-12'} }) }}
     {{ form_errors(form_profile.organisation_url) }}
-    {{ form_widget(form_profile.organisation_url, {'attr': {'class': 'form-control large'} }) }}
+    {{ form_widget(form_profile.organisation_url, {'attr': {'class': 'form-control large'}, 'required': false }) }}
 
-    {{ form_label(form_profile.profession, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_label(form_profile.profession, null, {'label_attr': {'class': 'main col-xs-12'} }) }}
     {{ form_errors(form_profile.profession) }}
-    {{ form_widget(form_profile.profession, {'attr': {'class': 'form-control large'} }) }}
+    {{ form_widget(form_profile.profession, {'attr': {'class': 'form-control large'}, 'required': false }) }}
 
-    {{ form_label(form_profile.website, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_label(form_profile.website, null, {'label_attr': {'class': 'main col-xs-12'} }) }}
     {{ form_errors(form_profile.website) }}
-    {{ form_widget(form_profile.website, {'attr': {'class': 'form-control large'} }) }}
+    {{ form_widget(form_profile.website, {'attr': {'class': 'form-control large'}, 'required': false }) }}
 
-    {{ form_label(form_profile.twitter_handle, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_label(form_profile.twitter_handle, null, {'label_attr': {'class': 'main col-xs-12'} }) }}
     {{ form_errors(form_profile.twitter_handle) }}
-    {{ form_widget(form_profile.twitter_handle, {'attr': {'class': 'form-control large'} }) }}
+    {{ form_widget(form_profile.twitter_handle, {'attr': {'class': 'form-control large'}, 'required': false }) }}
 
-    {{ form_label(form_profile.biography, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_label(form_profile.biography, null, {'label_attr': {'class': 'main col-xs-12'} }) }}
     {{ form_errors(form_profile.biography) }}
-    {{ form_widget(form_profile.biography, {'attr': {'class': 'form-control large'} }) }}
+    {{ form_widget(form_profile.biography, {'attr': {'class': 'form-control large'}, 'required': false }) }}
 
-    {{ form_label(form_profile.address_street, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_label(form_profile.address_street, null, {'label_attr': {'class': 'main col-xs-12'} }) }}
     {{ form_errors(form_profile.address_street) }}
-    {{ form_widget(form_profile.address_street, {'attr': {'class': 'form-control large'} }) }}
+    {{ form_widget(form_profile.address_street, {'attr': {'class': 'form-control large'}, 'required': false }) }}
 
-    {{ form_label(form_profile.address_street_meta, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_label(form_profile.address_street_meta, null, {'label_attr': {'class': 'main col-xs-12'} }) }}
     {{ form_errors(form_profile.address_street_meta) }}
-    {{ form_widget(form_profile.address_street_meta, {'attr': {'class': 'form-control large'} }) }}
+    {{ form_widget(form_profile.address_street_meta, {'attr': {'class': 'form-control large'}, 'required': false }) }}
 
-    {{ form_label(form_profile.address_city, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_label(form_profile.address_city, null, {'label_attr': {'class': 'main col-xs-12'} }) }}
     {{ form_errors(form_profile.address_city) }}
-    {{ form_widget(form_profile.address_city, {'attr': {'class': 'form-control large'} }) }}
+    {{ form_widget(form_profile.address_city, {'attr': {'class': 'form-control large'}, 'required': false }) }}
 
-    {{ form_label(form_profile.address_state, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_label(form_profile.address_state, null, {'label_attr': {'class': 'main col-xs-12'} }) }}
     {{ form_errors(form_profile.address_state) }}
-    {{ form_widget(form_profile.address_state, {'attr': {'class': 'form-control large'} }) }}
+    {{ form_widget(form_profile.address_state, {'attr': {'class': 'form-control large'}, 'required': false }) }}
 
-    {{ form_label(form_profile.address_country, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_label(form_profile.address_country, null, {'label_attr': {'class': 'main col-xs-12'}, 'required': false }) }}
     {{ form_errors(form_profile.address_country) }}
     {{ form_widget(form_profile.address_country, {'attr': {'class': 'form-control large'} }) }}
 
-    {{ form_label(form_profile.phone_number, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+    {{ form_label(form_profile.phone_number, null, {'label_attr': {'class': 'main col-xs-12'} }) }}
     {{ form_errors(form_profile.phone_number) }}
-    {{ form_widget(form_profile.phone_number, {'attr': {'class': 'form-control large'} }) }}
+    {{ form_widget(form_profile.phone_number, {'attr': {'class': 'form-control large'}, 'required': false }) }}
 
 {% endblock profile_meta %}
