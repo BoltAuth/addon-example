@@ -2,10 +2,11 @@
 
 namespace Bolt\Extension\Europeana\MembersAddons;
 
+use Bolt\Extension\Bolt\Members\Event\FormBuilderEvent;
 use Bolt\Extension\Bolt\Members\Event\MembersEvents;
 use Bolt\Extension\Bolt\Members\Event\MembersProfileEvent;
+use Bolt\Extension\Bolt\Members\Form\MembersForms;
 use Bolt\Extension\SimpleExtension;
-use Silex\Application;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
@@ -32,34 +33,8 @@ class MembersAddonsExtension extends SimpleExtension
     protected function subscribe(EventDispatcherInterface $dispatcher)
     {
         $dispatcher->addListener(MembersEvents::MEMBER_PROFILE_PRE_SAVE, [$this, 'onProfileSave']);
-    }
+        $dispatcher->addListener(FormBuilderEvent::BUILD, [$this, 'onRequest']);
 
-    /**
-     * {@inheritdoc}
-     */
-    protected function registerServices(Application $app)
-    {
-        $config = $this->getConfig();
-        $app['members.addons.config'] = $app->share(
-            function () use ($config) {
-                return new Config($config);
-            }
-        );
-
-        $app['members.meta_fields'] = $app->share(
-            function ($app) use ($config) {
-                return $app['members.meta_fields'] + $config['meta_fields'];
-            }
-        );
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function boot(Application $app)
-    {
-        parent::boot($app);
-        $this->onRequest($app);
     }
 
     /**
@@ -70,34 +45,26 @@ class MembersAddonsExtension extends SimpleExtension
     public function onProfileSave(MembersProfileEvent $event)
     {
         $config = $this->getConfig();
-        $event->addMetaFieldNames(array_keys($config['meta_fields']['profile']));
+        $event->addMetaEntryNames(array_keys($config['meta_fields']['profile']));
     }
 
     /**
-     * @param Application $app
+     * @param FormBuilderEvent $event
      */
-    public function onRequest(Application $app)
+    public function onRequest(FormBuilderEvent $event)
     {
-        $app['members.form.components'] = $app->extend(
-            'members.form.components',
-            function ($components, $app) {
-                $components['type']['profile_edit'] = $app->share(
-                    function () use ($app) {
-                        $type = new Form\Type\ProfileEditType($app['members.config']);
-                        $type->setLocalConfig($app['members.addons.config']);
+        if ($event->getName() !== MembersForms::FORM_PROFILE_EDIT && $event->getName() !== MembersForms::FORM_PROFILE_VIEW) {
+            return;
+        }
 
-                        return $type;
-                    }
-                );
-                $components['entity']['profile'] = $app->share(
-                    function () use ($app) {
-                        return new Form\Entity\Profile($app['members.records']);
-                    }
-                );
+        $app = $this->getContainer();
+        $localConfig = new Config($this->getConfig());
 
-                return $components;
-            }
-        );
+        $type = new Form\Type\ProfileEditType($app['members.config']);
+        $type->setLocalConfig($localConfig);
+
+        $event->setType($type);
+        $event->setEntityClass(Form\Entity\Profile::class);
     }
 
     /**
