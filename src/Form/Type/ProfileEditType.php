@@ -29,98 +29,84 @@ class ProfileEditType extends MembersProfileEditType
         $builder
             ->add('first_name', Type\TextType::class,   [
                 'label'       => Trans::__('First Name:'),
-                'data'        => $this->getData($options, 'first_name'),
                 'constraints' => [
                 ],
                 'required'    => $this->localConfig->isFirstNameRequired(),
             ])
             ->add('last_name', Type\TextType::class,   [
                 'label'       => Trans::__('Last Name:'),
-                'data'        => $this->getData($options, 'last_name'),
                 'constraints' => [
                 ],
                 'required'    => $this->localConfig->isLastNameRequired(),
             ])
             ->add('organisation', Type\TextType::class,   [
                 'label'       => Trans::__('Organisation:'),
-                'data'        => $this->getData($options, 'organisation'),
                 'constraints' => [
                 ],
                 'required'    => $this->localConfig->isOrganisationRequired(),
             ])
             ->add('organisation_url', Type\TextType::class,   [
                 'label'       => Trans::__('Organisation URL:'),
-                'data'        => $this->getData($options, 'organisation_url'),
                 'constraints' => [
                 ],
                 'required'    => $this->localConfig->isOrganisationUrlRequired(),
             ])
             ->add('profession', Type\TextType::class,   [
                 'label'       => Trans::__('Profession:'),
-                'data'        => $this->getData($options, 'profession'),
                 'constraints' => [
                 ],
                 'required'    => $this->localConfig->isProfessionRequired(),
             ])
             ->add('website', Type\TextType::class,   [
                 'label'       => Trans::__('Website URL:'),
-                'data'        => $this->getData($options, 'website'),
                 'constraints' => [
                 ],
                 'required'    => $this->localConfig->isWebsiteRequired(),
             ])
             ->add('twitter_handle', Type\TextType::class,   [
                 'label'       => Trans::__('Twitter Name:'),
-                'data'        => $this->getData($options, 'twitter_handle'),
                 'constraints' => [
                 ],
                 'required'    => $this->localConfig->isTwitterHandleRequired(),
             ])
             ->add('biography', Type\TextareaType::class,   [
                 'label'       => Trans::__('Biography:'),
-                'data'        => $this->getData($options, 'biography'),
                 'constraints' => [
                 ],
                 'required'    => $this->localConfig->isBiographyRequired(),
             ])
             ->add('address_street', Type\TextType::class,   [
                 'label'       => Trans::__('Street Address:'),
-                'data'        => $this->getData($options, 'address_street'),
                 'constraints' => [
                 ],
                 'required'    => $this->localConfig->isAddressStreetRequired(),
             ])
             ->add('address_street_meta', Type\TextType::class,   [
                 'label'       => null,
-                'data'        => $this->getData($options, 'address_street_meta'),
                 'constraints' => [
                 ],
                 'required'    => $this->localConfig->isAddressStreetMetaRequired(),
             ])
             ->add('address_city', Type\TextType::class,   [
                 'label'       => Trans::__('City:'),
-                'data'        => $this->getData($options, 'address_city'),
                 'constraints' => [
                 ],
                 'required'    => $this->localConfig->isAddressCityRequired(),
             ])
             ->add('address_state', Type\TextType::class,   [
                 'label'       => Trans::__('Province / state / arrondissement:'),
-                'data'        => $this->getData($options, 'address_state'),
                 'constraints' => [
                 ],
                 'required'    => $this->localConfig->isAddressStateRequired(),
             ])
             ->add('address_country', Type\TextType::class,   [
                 'label'       => Trans::__('Country:'),
-                'data'        => $this->getData($options, 'address_country'),
                 'constraints' => [
                 ],
                 'required'    => $this->localConfig->isAddressCountryRequired(),
             ])
             ->add('phone_number', Type\TextType::class,   [
                 'label'       => Trans::__('Phone number:'),
-                'data'        => $this->getData($options, 'phone_number'),
                 'constraints' => [
                 ],
                 'required'    => $this->localConfig->isPhoneNumberRequired(),
